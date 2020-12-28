@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ro">
+	
+	<head>
+		<link href="css/meniu.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/style.css" title="style" />
+		<link rel="stylesheet" type="text/css" href="css/media.css" title="style" />
+		<link href="css/galerie.css" type="text/css" rel="stylesheet">
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+		
+  			<meta charset="UTF-8">
+  			<meta name="description" content="Contul meu comunitate foto CF">
+  			<meta name="keywords" content="comunitate, fotografie, arta, poze, personal, cont, parola">
+  			<meta name="author" content="Comunitate foto CF">
+		
+		<title> Comunitate foto CF </title>
+		
+			<link rel="shortcut icon" type="image/x-icon" href="imag/favicon.ico"/>
+			<script type="text/javascript" src="js/script.js"></script>
+			<script type="text/javascript" src="js/task4.js"></script>
+			<script type="text/javascript" src="js/task5.js"></script>
+			<script type="text/javascript" src="js/task1.js"></script>
+			
+	</head>
+	
+<body>
+  
+	<div id="main">
+ 
+<!-- cod ejs -->
+<!-- cand pun - spun ca sirul respectiv sa aiba tagurile interpretate ca taguri -->
+<%- include("../fragmente/header")  %> <!-- extensia nu e necesara -->
+
+
+<main>
+
+	<div id="site_content">
+	
+		<div class="sidebar">
+		
+				<div class="gallery">
+					<a target="_blank" href="imgcont/2.jpg">
+						<img src="imgcont/2.jpg" alt="imagine din galerie" title="poza din galerie"/>
+					</a>
+					<div class="desc">Artistic</div>
+				</div>
+
+				<div class="gallery">
+					<a target="_blank" href="imgcont/3.jpg">
+						<img src="imgcont/3.jpg" alt="imagine din galerie" title="poza din galerie"/>
+					</a>
+					<div class="desc">Delicatete</div>
+				</div>
+
+				<div class="gallery">
+					<a target="_blank" href="imgcont/9.jpg">
+						<img src="imgcont/9.jpg" alt="imagine din galerie" title="poza din galerie"/>
+					</a>
+					<div class="desc">Natura</div>
+				</div>
+
+				<div class="gallery">
+					<a target="_blank" href="imgcont/8.jpg">
+						<img src="imgcont/8.jpg" alt="imagine din galerie" title="poza din galerie"/>
+					</a>
+					<div class="desc">Gingasie</div>
+				</div>
+      
+			
+				<h3>Ne gasesti aici:</h3>
+					<ul>
+						<li><a href="https://www.instagram.com/comunitatefoto/?hl=ro"><img src="imag/insta.png" class="facebook" alt="facebook icon" title="Facebook"/></a></li>
+						<li><a href="https://www.facebook.com/ComunitateFoto/"><img src="imag/fb.png" class="facebook" alt="instagram icon" title="Instagram"/></a></li>       
+					</ul>
+				
+			
+		
+		</div>
+	
+	
+		<!--continut-->
+	  
+		<div id="content">
+		
+		
+		
+		Mai intai introdu data nasterii ca sa-ti spunem cat de batran esti :)
+		<input type="text" value="dd#mm#yyyy" id="varsta"/>
+		<button id="buton"> Calculeaza</button>
+		<div id="afis_varsta"></div>
+		
+		<h1>Inregistrare utilizator</h1>
+        <p>Completati formularul pentru noul fotograf:<br/>
+		<img src="https://pngimage.net/wp-content/uploads/2018/06/fotograf-png-4.png" alt="fotograf"/>
+		</p>
+		
+		<% if(!locals.rsstatus) { %><!-- verific daca status e definit-->
+		<form method="post" action="/inreg" class="date"> <!-- daca nu pun action atunci actionul default este pagina curenta -->
+			<p>
+			<label>
+				Username: <input type="text" name="username" value="fotocf123">
+			</label>
+			</p>
+			<p>
+			<label>
+				Nume: <input type="text" name="nume" value="Popescus Fotografus">
+			</label>
+			</p>
+			<p>
+			<label>
+				Varsta: <input type="text" name="varsta" value="20">ani
+			</label>
+			</p>
+			<p>
+			<label>
+				Model aparat foto: <input type="text" name="aparat" value="Canon EOS 2000D">
+				<p>* Daca nu detii un aparat specifica: "Nu detin, dar mi-as dori"</p>
+			</label>
+			</p>
+			<p>
+			<label>
+				Ce tipuri de fotografie preferati: <input type="text" name="foto" value="portret, peisaj, street life" size="50">
+			</label>
+			</p>
+			<p>
+			<label>
+				Parola: <input type="password" name="parola" value="">
+			</label>
+			</p>
+			<p>
+			<label>
+				Confirmare parola: <input type="password" name="rparola" value="">
+			</label>
+			</p>
+			<p>
+			<label>
+				Email-ul dvs: <input type="text" name="email" value="comunitate_cf@gmail.com"  size="50">
+			</label>
+			</p>
+			<p>		
+			<input type="submit" value="Submit">
+			</p>
+		</form>
+		<% } else if(rsstatus=="ok"){ %>
+			<p>Date introduse</p>
+		<% } else {%>
+			<p>Eroare</p>
+		<% } %>
+		
+		</div>
+		
+		
+	</div>
+			
+</main>
+	<%- include("../fragmente/footer")  %> <!-- extensia nu e necesara -->
+
+</div>
+</body>
+</html>

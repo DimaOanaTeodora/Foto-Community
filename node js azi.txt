@@ -1,0 +1,27 @@
+app.get('/ceva', function(req, res) {
+	/*afiseaza(render) pagina folosind ejs (deoarece este setat ca view engine) */
+		console.log("A intrat un student!");
+    res.setHeader("Content-Type","text/html");
+		x=Math.random()//asta tine loc de procesare
+		res.write("<html><body><p>");
+		if(x<0.5){
+			res.write("Salut!!!");
+		}
+		else{
+			res.write("Pa! Pa!");
+		}
+		res.write("</p></body></html>");
+		res.end();
+});
+node index.js
+ctrl c + sageata sus =>repornire powersheel
+
+<label>
+                Username: <input type="text" name="username" >
+                <button type="button" onclick="location.href = '/inreg';"> Inregistrare </button>
+            </label>
+            <label id="pass">
+                Parola: <input type="password" name="parola" >
+            </label>
+            
+            <input type="submit" value="Login">

@@ -1,0 +1,59 @@
+<header>
+
+	
+	<div id="logo">
+	
+        <div id="logo_text">
+			<a href="/index"><img src="imag/titlucrop.png" alt="Comunitate foto CF" title="Home"  class="imgl"/></a>
+        </div>
+    
+	  
+		<!--meniu-->
+		<!--formular login-->
+		
+			<!-- datele transmise in render devin  proprietati ale obiectului locals -->
+	<% if(!locals.username) {  %>
+	<form method="post" action="/login" style="font-size:0.7em; color:white">
+		<label>
+				Username: <input type="text" name="username" value="">
+			</label>
+			<label>
+				Parola: <input type="password" name="parola" value="">
+			</label>
+			<input type="submit" value="OK">
+	</form>
+	<% }
+	else { %>
+	<div  style="color:white">
+	Utilizator logat: <%= locals.username  %>
+	<button><a href="/logout">Logout</a></button>
+	</div>
+	<% } %>
+
+			
+		<nav>
+				<ul class="menu">
+			
+				<li><a href="/Despre" >Despre</a></li>
+				<li><a href="/BeginnersGuide" >Beginners Guide</a></li>
+				
+				<li>
+					<a href="#">CATEGORII</a>
+					<ul class="submenu">
+					
+						<li><a href="/Animale">Animale</a></li>
+							<li><a href="/Peisaje">Peisaje</a></li>
+							<li><a href="/Streetlife">Street life</a></li>
+							<li><a href="/Portrete">Portrete</a></li>
+							
+					
+					</ul>
+				</li>
+				<li><a href="/cont">Contul meu</a></li>
+				
+				</ul>
+			</nav>
+			
+	</div>
+	   
+</header>
