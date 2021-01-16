@@ -1,4 +1,4 @@
-# Foto-Community :camera:
+# Photo-Community :camera:
 My passion for photography gave me the idea to create a community for Romanian photographers, a place where they can share their work with other people.
 
 ## Web technologies: HTML5, CSS, JavaScript, Node.Js
